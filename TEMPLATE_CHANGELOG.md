@@ -106,6 +106,6 @@
 **Initial Release**
 - Next.js 15 + TypeScript + Tailwind CSS
 - 6 AI Agents mit Checklisten
-- Supabase-Ready, shadcn/ui-Ready, Vercel-Ready
+- PHP 8.4 + MariaDB-Ready, shadcn/ui-Ready, Deployment-Ready
 - PROJECT_CONTEXT.md Template
 - Feature Specs System (`/features/PROJ-X.md`)

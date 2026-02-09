@@ -8,9 +8,9 @@ This template includes everything you need for professional AI-powered developme
 - ✅ **Production Guides** (Error Tracking, Security, Performance, Scaling)
 - ✅ **Feature Changelog System** (Agents know what already exists → Code Reuse)
 - ✅ **PM-Friendly** (No code in specs, automatic handoffs between agents)
-- ✅ **Supabase-Ready** (optional)
+- ✅ **PHP 8.4 + MariaDB 10.3.32 Backend** (statt Supabase/Node.js)
 - ✅ **shadcn/ui-Ready** (add components as needed)
-- ✅ **Vercel Deployment-Ready**
+- ✅ **Deployment-Ready** (PHP-FPM + Nginx/Apache)
 
 ---
 
@@ -24,16 +24,16 @@ cd my-project
 npm install
 ```
 
-### 2. (Optional) Supabase Setup
+### 2. (Optional) PHP + MariaDB Backend Setup
 
-If you need a backend:
+Wenn du ein Backend brauchst:
 
-1. Create Supabase Project: [supabase.com](https://supabase.com)
-2. Copy `.env.local.example` to `.env.local`
-3. Add your Supabase credentials
-4. Activate Supabase Client in `src/lib/supabase.ts` (uncomment code)
+1. Richte eine MariaDB 10.3.32 Datenbank ein
+2. Kopiere `.env.local.example` zu `.env.local` (oder `.env` im PHP-Backend)
+3. Trage deine DB-Zugangsdaten ein
+4. Implementiere die API in PHP 8.4 (siehe `backend/README.md` für Struktur)
 
-**Skip this step** if you're building frontend-only (landing pages, portfolios, etc.)
+**Skip this step** wenn du nur Frontend baust (Landing Pages, Portfolio, etc.)
 
 ### 3. Start Development Server
 
@@ -81,8 +81,8 @@ ai-coding-starter-kit/
 │   ├── components/          ← React Components
 │   │   └── ui/              ← shadcn/ui components (add as needed)
 │   └── lib/                 ← Utility functions
-│       ├── supabase.ts      ← Supabase Client (commented out by default)
 │       └── utils.ts
+├── backend/                 ← PHP 8.4 API (optional, separate service)
 ├── public/                  ← Static files
 ├── PROJECT_CONTEXT.md       ← Project Documentation (fill this out!)
 ├── TEMPLATE_CHANGELOG.md    ← Template Version History (v1.0 - v1.3)
@@ -105,10 +105,10 @@ This template includes production-readiness guides integrated into the agents:
 
 ### Backend Agent includes:
 - **Database Indexing** – Make queries 10-100x faster
-- **Query Optimization** – Avoid N+1 problems with Supabase joins
-- **Caching Strategy** – Next.js `unstable_cache` examples
-- **Input Validation** – Zod schemas for API safety
-- **Rate Limiting** – Optional Upstash Redis setup
+- **Query Optimization** – Avoid N+1 problems with SQL joins
+- **Caching Strategy** – PHP OPcache/Redis examples
+- **Input Validation** – Server-side validation best practices
+- **Rate Limiting** – Optional Redis/NGINX rate limiting
 
 All guides are **practical** with **copy-paste code examples** – no theory!
 
@@ -137,7 +137,7 @@ Agent designs PM-friendly Tech Design (no code!) → You review
 # Frontend:
 "Read .claude/agents/frontend-dev.md and implement /features/PROJ-1-feature.md"
 
-# Backend (if using Supabase):
+# Backend (PHP + MariaDB):
 "Read .claude/agents/backend-dev.md and implement /features/PROJ-1-feature.md"
 ```
 
@@ -154,7 +154,7 @@ Agent tests all Acceptance Criteria → Adds test results to feature spec
 ### 5. Deployment Phase
 ```bash
 # Tell Claude:
-"Read .claude/agents/devops.md and deploy to Vercel"
+"Read .claude/agents/devops.md and deploy to your PHP hosting"
 ```
 
 Agent guides you through deployment + Production-Ready setup (Error Tracking, Security, Performance)
@@ -169,8 +169,8 @@ Agent guides you through deployment + Production-Ready setup (Error Tracking, Se
 | **Language** | TypeScript | Type Safety |
 | **Styling** | Tailwind CSS | Utility-First CSS |
 | **UI Library** | shadcn/ui | Copy-Paste Components |
-| **Backend** | Supabase (optional) | PostgreSQL + Auth + Storage |
-| **Deployment** | Vercel | Zero-Config Next.js Hosting |
+| **Backend** | PHP 8.4 + MariaDB 10.3.32 | REST APIs + SQL |
+| **Deployment** | Nginx/Apache + PHP-FPM | Standard PHP hosting |
 | **Error Tracking** | Sentry (optional) | Production Error Monitoring |
 
 ---
@@ -200,7 +200,7 @@ Agent guides you through deployment + Production-Ready setup (Error Tracking, Se
 
 5. **Deploy**
    - Push to GitHub
-   - Connect with Vercel
+   - Deploy Frontend (z.B. Vercel) und Backend (PHP Hosting)
    - Use DevOps Agent for deployment help
 
 ---
@@ -222,7 +222,7 @@ Agent guides you through deployment + Production-Ready setup (Error Tracking, Se
 ### 📦 You add yourself
 
 - shadcn/ui Components (as needed)
-- Supabase Setup (optional)
+- PHP 8.4 + MariaDB Backend Setup (optional)
 - Your Features (with Agent-Team)
 - Production Setup (Error Tracking, Security Headers)
 
@@ -259,7 +259,8 @@ Agent guides you through deployment + Production-Ready setup (Error Tracking, Se
 - [Next.js Docs](https://nextjs.org/docs)
 - [Tailwind CSS Docs](https://tailwindcss.com/docs)
 - [shadcn/ui Docs](https://ui.shadcn.com)
-- [Supabase Docs](https://supabase.com/docs)
+- [PHP Docs](https://www.php.net/docs.php)
+- [MariaDB Docs](https://mariadb.com/kb/en/documentation/)
 
 ---
 

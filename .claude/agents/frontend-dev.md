@@ -207,7 +207,7 @@ export function ProjectCard({ id, title, taskCount, onDelete }: ProjectCardProps
 ```
 
 **Beachte:** Dieses Beispiel nutzt `Card`, `Button`, `Badge` von shadcn/ui - keine eigenen Implementierungen!
-## Auth/Login Best Practices (Supabase + Next.js)
+## Auth/Login Best Practices (API + Cookies)
 
 ### 1. Hard Redirect nach Login verwenden
 
@@ -231,19 +231,23 @@ window.location.href = '/'
 **Lösung:** Immer `data.session` prüfen bevor weitergeleitet wird:
 
 ```typescript
-const { data, error } = await supabase.auth.signInWithPassword({
-  email,
-  password,
+const response = await fetch('/api/login', {
+  method: 'POST',
+  headers: { 'Content-Type': 'application/json' },
+  body: JSON.stringify({ email, password }),
 })
 
-if (error) {
-  setError(error.message)
+if (!response.ok) {
+  const error = await response.json()
+  setError(error.error ?? 'Login fehlgeschlagen')
   setIsLoading(false)
   return
 }
 
-// ✅ Session explizit prüfen
-if (data.session) {
+const data = await response.json()
+
+// ✅ Session explizit prüfen (Cookie/Token gesetzt)
+if (data.session === true) {
   window.location.href = '/'
 } else {
   setError('Login fehlgeschlagen. Bitte versuche es erneut.')
@@ -259,7 +263,7 @@ if (data.session) {
 
 ```typescript
 // ✅ Loading-State wird in ALLEN Fällen zurückgesetzt (außer bei erfolgreichem Redirect)
-if (data.session) {
+if (data.session === true) {
   window.location.href = '/'  // Page wird neu geladen, State egal
 } else {
   setError('Login fehlgeschlagen')
@@ -267,9 +271,9 @@ if (data.session) {
 }
 ```
 
-### 4. Debugging: Supabase Auth-Logs nutzen
+### 4. Debugging: API Logs nutzen
 
-Bei Login-Problemen die Supabase Auth-Logs prüfen (via MCP oder Dashboard):
+Bei Login-Problemen die API-Logs prüfen (Webserver/PHP Logs):
 - **Status 200** = Login serverseitig erfolgreich → Problem liegt im Frontend
 - **Status 400** = Invalid credentials → Falsches Passwort/Email
 - **Status 429** = Rate limit → Zu viele Versuche
@@ -332,7 +336,7 @@ Prüfe die Feature Spec (`/features/PROJ-X.md`):
 **Braucht das Feature Backend-Funktionalität?**
 
 Indikatoren für **JA** (Backend nötig):
-- Datenbank-Zugriff (Supabase, PostgreSQL)
+- Datenbank-Zugriff (MariaDB)
 - User-Login/Authentication
 - Server-Side Logic
 - API-Endpunkte
@@ -399,15 +403,15 @@ Lies .claude/agents/qa-engineer.md und teste /features/PROJ-1-simple-todo-kanban
 ```
 ```
 
-### Beispiel 2: Feature mit Supabase Backend
+### Beispiel 2: Feature mit PHP + MariaDB Backend
 
 ```
 User: "Ist die Frontend-Implementierung fertig?"
 Frontend Dev: "Ja! Die UI ist fertig und getestet."
 
-[Prüfe Feature Spec → nutzt Supabase Datenbank]
+[Prüfe Feature Spec → nutzt MariaDB Datenbank]
 
-Frontend Dev: "Die Frontend-Implementierung ist fertig! Dieses Feature benötigt Backend-Funktionalität (Supabase Datenbank + APIs). Soll der Backend Developer jetzt die Server-Side Logic implementieren?
+Frontend Dev: "Die Frontend-Implementierung ist fertig! Dieses Feature benötigt Backend-Funktionalität (MariaDB Datenbank + PHP APIs). Soll der Backend Developer jetzt die Server-Side Logic implementieren?
 
 Wenn ja:
 ```
