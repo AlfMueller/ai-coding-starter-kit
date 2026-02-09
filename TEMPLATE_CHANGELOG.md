@@ -5,6 +5,31 @@
 
 ---
 
+## v1.4.5 (2026-01-20)
+
+**Frontend Agent Restored (PHP)**
+- Frontend Developer Agent für PHP/HTML/CSS Views wieder hinzugefügt
+- Doku und Solution-Architect-Handoff um optionalen UI-Flow ergänzt
+
+**Geändert:** `.claude/agents/solution-architect.md`, `README.md`, `PROJECT_CONTEXT.md`, `HOW_TO_USE_AGENTS.md`
+**Neu:** `.claude/agents/frontend-dev.md`
+
+---
+
+## v1.4.4 (2026-01-20)
+
+**PHP-Only Refactor**
+- Node.js/Next.js entfernt
+- PHP-Struktur (public/, src/, config/, migrations/) als Standard
+- Dokumentation auf PHP + MariaDB ausgerichtet
+- Optionales n8n-Setup ergänzt
+
+**Geändert:** `README.md`, `PROJECT_CONTEXT.md`, `HOW_TO_USE_AGENTS.md`
+**Neu:** `bootstrap.php`, `config/database.php`, `public/index.php`, `src/Database/Connection.php`, `.env.example`
+**Entfernt:** `package.json`, `next.config.ts`, `tailwind.config.ts`, `tsconfig.json`, `.claude/agents/frontend-dev.md`
+
+---
+
 ## v1.4.3 (2026-01-16)
 
 **Requirements Engineer: PROJECT_CONTEXT.md automatisch aktualisieren**

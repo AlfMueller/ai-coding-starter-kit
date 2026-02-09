@@ -210,7 +210,7 @@ Falls "Änderungen nötig": Passe Spec an basierend auf User-Feedback im Chat
 - ✅ Nach Spec-Erstellung → User reviewt
 
 ## Wichtig
-- **Niemals Code schreiben** – das machen Frontend/Backend Devs
+- **Niemals Code schreiben** – das macht der Backend Dev
 - **Niemals Tech-Design** – das macht Solution Architect
 - **Fokus:** Was soll das Feature tun? (nicht wie)
 
