@@ -1,22 +1,22 @@
-# AI Coding Starter Kit – Production-Ready Template
+# AI Coding Starter Kit – Produktionsreifes Template
 
-> **Build scalable, production-ready web apps faster** with AI agents handling Requirements, Architecture, Development, QA, and Deployment.
+> **Baue skalierbare, produktionsreife Web-Apps schneller** – mit KI‑Agenten für Anforderungen, Architektur, Entwicklung, QA und Deployment.
 
-This template includes everything you need for professional AI-powered development:
-- ✅ **Next.js 16** (latest) with TypeScript + Tailwind CSS
-- ✅ **6 Production-Ready AI Agents** (Requirements → Deployment)
-- ✅ **Production Guides** (Error Tracking, Security, Performance, Scaling)
-- ✅ **Feature Changelog System** (Agents know what already exists → Code Reuse)
-- ✅ **PM-Friendly** (No code in specs, automatic handoffs between agents)
+Dieses Template enthält alles, was du für professionelle KI‑gestützte Entwicklung brauchst:
+- ✅ **Next.js 16** (aktuell) mit TypeScript + Tailwind CSS
+- ✅ **6 produktionsreife KI‑Agenten** (Anforderungen → Deployment)
+- ✅ **Produktions‑Guides** (Error Tracking, Security, Performance, Scaling)
+- ✅ **Feature‑Changelog‑System** (Agenten wissen, was schon existiert → Code‑Reuse)
+- ✅ **PM‑freundlich** (keine Code‑Snippets in Specs, automatische Übergaben zwischen Agenten)
 - ✅ **PHP 8.4 + MariaDB 10.3.32 Backend** (statt Supabase/Node.js)
-- ✅ **shadcn/ui-Ready** (add components as needed)
-- ✅ **Deployment-Ready** (PHP-FPM + Nginx/Apache)
+- ✅ **shadcn/ui‑bereit** (Komponenten nach Bedarf hinzufügen)
+- ✅ **Deployment‑ready** (PHP‑FPM + Nginx/Apache)
 
 ---
 
-## Quick Start
+## Schnellstart
 
-### 1. Clone & Install
+### 1. Klonen & Installieren
 
 ```bash
 git clone https://github.com/YOUR_USERNAME/ai-coding-starter-kit.git my-project
@@ -29,277 +29,171 @@ npm install
 Wenn du ein Backend brauchst:
 
 1. Richte eine MariaDB 10.3.32 Datenbank ein
-2. Kopiere `.env.local.example` zu `.env.local` (oder `.env` im PHP-Backend)
-3. Trage deine DB-Zugangsdaten ein
+2. Kopiere `.env.local.example` zu `.env.local` (oder `.env` im PHP‑Backend)
+3. Trage deine DB‑Zugangsdaten ein
 4. Implementiere die API in PHP 8.4 (siehe `backend/README.md` für Struktur)
 
-**Skip this step** wenn du nur Frontend baust (Landing Pages, Portfolio, etc.)
+**Diesen Schritt überspringen**, wenn du nur Frontend baust (Landing Pages, Portfolio, etc.).
 
-### 3. Start Development Server
+### 3. Entwicklungsserver starten
 
 ```bash
 npm run dev
 ```
 
-Open [http://localhost:3000](http://localhost:3000) in your browser.
+Öffne [http://localhost:3000](http://localhost:3000) im Browser.
 
-### 4. Use AI Agents
+### 4. KI‑Agenten nutzen
 
-⚠️ **Important:** Agents are **not Skills** – you can't call them with `/requirements-engineer`!
+⚠️ **Wichtig:** Agenten sind **keine Skills** – du kannst sie nicht mit `/requirements-engineer` aufrufen!
 
-**How to use Agents:**
+**So nutzt du Agenten:**
 
 ```
-Hey Claude, read .claude/agents/requirements-engineer.md and create a feature spec for [your idea].
+Hey Claude, lies .claude/agents/requirements-engineer.md und erstelle eine Feature‑Spezifikation für [deine Idee].
 ```
 
-**Full Guide:** See [HOW_TO_USE_AGENTS.md](HOW_TO_USE_AGENTS.md)
+**Vollständiger Guide:** Siehe [HOW_TO_USE_AGENTS.md](HOW_TO_USE_AGENTS.md)
 
-**Available Agents:**
-- `requirements-engineer.md` - Feature Specs with interactive questions
-- `solution-architect.md` - PM-friendly Tech Design (no code snippets)
-- `frontend-dev.md` - UI Components + Automatic Backend/QA Handoff
-- `backend-dev.md` - APIs + Database + **Performance Best Practices**
-- `qa-engineer.md` - Testing + Regression Tests
-- `devops.md` - Deployment + **Production-Ready Essentials**
+**Verfügbare Agenten:**
+- `requirements-engineer.md` – Feature‑Specs mit interaktiven Fragen
+- `solution-architect.md` – PM‑freundliches Tech‑Design (keine Code‑Snippets)
+- `frontend-dev.md` – UI‑Komponenten + automatische Backend/QA‑Übergabe
+- `backend-dev.md` – APIs + Datenbank + **Performance‑Best‑Practices**
+- `qa-engineer.md` – Testing + Regression‑Tests
+- `devops.md` – Deployment + **Production‑Ready Essentials**
 
 ---
 
-## Project Structure
+## Projektstruktur
 
 ```
 ai-coding-starter-kit/
 ├── .claude/
-│   └── agents/              ← 6 AI Agents (Production-Ready)
-├── features/                ← Feature Specs (includes specs, test results, deployment status)
+│   └── agents/              ← 6 KI‑Agenten (produktionsreif)
+├── features/                ← Feature‑Specs (inkl. Spezifikationen, Testergebnisse, Deployment‑Status)
 │   └── README.md
 ├── src/
 │   ├── app/                 ← Pages (Next.js App Router)
 │   │   ├── layout.tsx
 │   │   ├── page.tsx
 │   │   └── globals.css
-│   ├── components/          ← React Components
-│   │   └── ui/              ← shadcn/ui components (add as needed)
-│   └── lib/                 ← Utility functions
+│   ├── components/          ← React‑Komponenten
+│   │   └── ui/              ← shadcn/ui‑Komponenten (bei Bedarf hinzufügen)
+│   └── lib/                 ← Utility‑Funktionen
 │       └── utils.ts
-├── backend/                 ← PHP 8.4 API (optional, separate service)
-├── public/                  ← Static files
-├── PROJECT_CONTEXT.md       ← Project Documentation (fill this out!)
-├── TEMPLATE_CHANGELOG.md    ← Template Version History (v1.0 - v1.3)
-├── HOW_TO_USE_AGENTS.md     ← Agent Usage Guide
-├── .env.local.example       ← Environment Variables Template
+├── backend/                 ← PHP 8.4 API (optional, separater Service)
+├── public/                  ← Statische Dateien
+├── PROJECT_CONTEXT.md       ← Projekt‑Dokumentation (bitte ausfüllen!)
+├── TEMPLATE_CHANGELOG.md    ← Template‑Versionshistorie (v1.0 – v1.3)
+├── HOW_TO_USE_AGENTS.md     ← Agenten‑Nutzungsanleitung
+├── .env.local.example       ← Environment‑Variablen‑Vorlage
 └── package.json
 ```
 
 ---
 
-## Production-Ready Features ⚡
+## Produktionsreife Features ⚡
 
-This template includes production-readiness guides integrated into the agents:
+Dieses Template enthält produktionsreife Guides, die in die Agenten integriert sind:
 
-### DevOps Agent includes:
-- **Error Tracking Setup** (Sentry) – 5-minute setup with code examples
-- **Security Headers** (XSS/Clickjacking Protection) – Copy-paste `next.config.js`
-- **Environment Variables Best Practices** – Secrets management
-- **Performance Monitoring** (Lighthouse) – Built-in Chrome DevTools
+### DevOps‑Agent beinhaltet:
+- **Error‑Tracking‑Setup** (Sentry) – 5‑Minuten‑Setup mit Code‑Beispielen
+- **Security Headers** (XSS/Clickjacking‑Schutz) – Copy‑Paste `next.config.js`
+- **Best Practices für Environment‑Variablen** – Secrets‑Management
+- **Performance‑Monitoring** (Lighthouse) – integrierte Chrome DevTools
 
-### Backend Agent includes:
-- **Database Indexing** – Make queries 10-100x faster
-- **Query Optimization** – Avoid N+1 problems with SQL joins
-- **Caching Strategy** – PHP OPcache/Redis examples
-- **Input Validation** – Server-side validation best practices
-- **Rate Limiting** – Optional Redis/NGINX rate limiting
+### Backend‑Agent beinhaltet:
+- **Datenbank‑Indexierung** – Queries 10–100x schneller machen
+- **Query‑Optimierung** – N+1‑Probleme mit SQL‑Joins vermeiden
+- **Caching‑Strategie** – PHP OPcache/Redis‑Beispiele
+- **Input‑Validierung** – Best Practices für Server‑Side‑Validierung
+- **Rate Limiting** – Optionales Redis/NGINX‑Rate‑Limiting
 
-All guides are **practical** with **copy-paste code examples** – no theory!
+Alle Guides sind **praxisnah** mit **Copy‑Paste‑Code‑Beispielen** – keine Theorie!
 
 ---
 
-## Agent-Team Workflow
+## Agent‑Team‑Workflow
 
-### 1. Requirements Phase
+### 1. Anforderungen
 ```bash
-# Tell Claude:
-"Read .claude/agents/requirements-engineer.md and create a feature spec for [your idea]"
+# Sage Claude:
+"Lies .claude/agents/requirements-engineer.md und erstelle eine Feature‑Spezifikation für [deine Idee]"
 ```
 
-Agent asks questions → You answer → Agent creates Feature Spec in `/features/PROJ-1-feature.md`
+Agent stellt Fragen → Du antwortest → Agent erstellt Feature‑Spec in `/features/PROJ-1-feature.md`
 
-### 2. Architecture Phase
+### 2. Architektur
 ```bash
-# Tell Claude:
-"Read .claude/agents/solution-architect.md and design the architecture for /features/PROJ-1-feature.md"
+# Sage Claude:
+"Lies .claude/agents/solution-architect.md und entwirf die Architektur für /features/PROJ-1-feature.md"
 ```
 
-Agent designs PM-friendly Tech Design (no code!) → You review
+Agent erstellt PM‑freundliches Tech‑Design (kein Code!) → Du prüfst
 
-### 3. Implementation Phase
+### 3. Umsetzung
 ```bash
 # Frontend:
-"Read .claude/agents/frontend-dev.md and implement /features/PROJ-1-feature.md"
+"Lies .claude/agents/frontend-dev.md und implementiere /features/PROJ-1-feature.md"
 
 # Backend (PHP + MariaDB):
-"Read .claude/agents/backend-dev.md and implement /features/PROJ-1-feature.md"
+"Lies .claude/agents/backend-dev.md und implementiere /features/PROJ-1-feature.md"
 ```
 
-**Note:** Frontend Agent automatically checks if Backend is needed and hands off to QA when done!
+**Hinweis:** Der Frontend‑Agent prüft automatisch, ob ein Backend nötig ist, und übergibt nach Abschluss an QA!
 
-### 4. Testing Phase
+### 4. Testen
 ```bash
-# Tell Claude:
-"Read .claude/agents/qa-engineer.md and test /features/PROJ-1-feature.md"
+# Sage Claude:
+"Lies .claude/agents/qa-engineer.md und teste /features/PROJ-1-feature.md"
 ```
 
-Agent tests all Acceptance Criteria → Adds test results to feature spec
+Agent testet alle Akzeptanzkriterien → fügt Testergebnisse zur Feature‑Spec hinzu
 
-### 5. Deployment Phase
+### 5. Deployment
 ```bash
-# Tell Claude:
-"Read .claude/agents/devops.md and deploy to your PHP hosting"
+# Sage Claude:
+"Lies .claude/agents/devops.md und deploye auf deinem PHP‑Hosting"
 ```
 
-Agent guides you through deployment + Production-Ready setup (Error Tracking, Security, Performance)
+Agent führt dich durch Deployment + Produktions‑Setup (Error Tracking, Security, Performance)
 
 ---
 
 ## Tech Stack
 
-| Category | Tool | Why? |
-|----------|------|------|
+| Kategorie | Tool | Warum? |
+|----------|------|--------|
 | **Framework** | Next.js 16 | React + Server Components + Routing |
-| **Language** | TypeScript | Type Safety |
-| **Styling** | Tailwind CSS | Utility-First CSS |
-| **UI Library** | shadcn/ui | Copy-Paste Components |
-| **Backend** | PHP 8.4 + MariaDB 10.3.32 | REST APIs + SQL |
-| **Deployment** | Nginx/Apache + PHP-FPM | Standard PHP hosting |
-| **Error Tracking** | Sentry (optional) | Production Error Monitoring |
+| **Sprache** | TypeScript | Typsicherheit |
+| **Styling** | Tailwind CSS | Utility‑First CSS |
+| **UI‑Library** | shadcn/ui | Copy‑Paste‑Komponenten |
+| **Backend** | PHP 8.4 + MariaDB 10.3.32 | REST‑APIs + SQL |
+| **Deployment** | Nginx/Apache + PHP‑FPM | Standard‑PHP‑Hosting |
+| **Error Tracking** | Sentry (optional) | Monitoring für Produktionsfehler |
 
 ---
 
-## Next Steps
+## Nächste Schritte
 
-1. **Fill out PROJECT_CONTEXT.md**
-   - Define your vision
-   - Add features to roadmap
+1. **PROJECT_CONTEXT.md ausfüllen**
+   - Definiere deine Vision
+   - Füge Features zur Roadmap hinzu
 
-2. **Build your first feature**
-   - Use Requirements Engineer for Feature Spec
-   - Follow the Agent-Team workflow
+2. **Dein erstes Feature bauen**
+   - Requirements Engineer für die Feature‑Spec nutzen
+   - Agent‑Team‑Workflow befolgen
 
-3. **Add shadcn/ui components** (as needed)
+3. **shadcn/ui‑Komponenten hinzufügen** (bei Bedarf)
    ```bash
    npx shadcn@latest add button
    npx shadcn@latest add card
    # etc.
    ```
 
-4. **Production Setup** (first deployment)
-   - Follow DevOps Agent guides:
-     - Error Tracking (Sentry) – 5 minutes
-     - Security Headers (`next.config.js`) – Copy-paste
-     - Performance Check (Lighthouse) – Chrome DevTools
-
-5. **Deploy**
-   - Push to GitHub
-   - Deploy Frontend (z.B. Vercel) und Backend (PHP Hosting)
-   - Use DevOps Agent for deployment help
-
----
-
-## What's Included
-
-### ✅ Works out-of-the-box
-
-- Next.js 16 with App Router
-- TypeScript (strict mode)
-- Tailwind CSS (configured)
-- ESLint 9 (Next.js defaults)
-- 6 Production-Ready AI Agents
-- Feature Changelog System (Code-Reuse!)
-- Project Structure (best practices)
-- Environment Variables Setup
-- .gitignore (Node modules, .env, etc.)
-
-### 📦 You add yourself
-
-- shadcn/ui Components (as needed)
-- PHP 8.4 + MariaDB Backend Setup (optional)
-- Your Features (with Agent-Team)
-- Production Setup (Error Tracking, Security Headers)
-
----
-
-## Why This Template?
-
-### For Product Managers
-- **No deep tech background needed** – Agents explain in PM-friendly language
-- **Automatic handoffs** – Frontend → Backend Check → QA (no manual coordination)
-- **Production-ready** – Security, Performance, Error Tracking included
-
-### For Solo Founders
-- **Build faster** – Agents handle Requirements → Deployment
-- **Built for scale** – Database indexing, query optimization, caching
-- **MVP to Production** – One template for both
-
-### For Small Teams (2-5 people)
-- **Consistent workflow** – Everyone follows the same agent system
-- **Code reuse** – Git history shows what exists, prevents duplication
-- **Knowledge sharing** – All decisions documented in Feature Specs
-
----
-
-## Documentation
-
-### Template Docs
-- [HOW_TO_USE_AGENTS.md](HOW_TO_USE_AGENTS.md) – Agent usage guide
-- [PROJECT_CONTEXT.md](PROJECT_CONTEXT.md) – Project documentation template
-- [TEMPLATE_CHANGELOG.md](TEMPLATE_CHANGELOG.md) – Template version history
-- [features/README.md](features/README.md) – Feature spec format
-
-### External Docs
-- [Next.js Docs](https://nextjs.org/docs)
-- [Tailwind CSS Docs](https://tailwindcss.com/docs)
-- [shadcn/ui Docs](https://ui.shadcn.com)
-- [PHP Docs](https://www.php.net/docs.php)
-- [MariaDB Docs](https://mariadb.com/kb/en/documentation/)
-
----
-
-## Scripts
-
-```bash
-npm run dev        # Start development server (localhost:3000)
-npm run build      # Production build
-npm run start      # Start production server
-npm run lint       # Run ESLint
-```
-
----
-
-## Template Versions
-
-**Current:** v1.4.0 (Git-Based Workflow)
-
-See [TEMPLATE_CHANGELOG.md](TEMPLATE_CHANGELOG.md) for full version history.
-
-**Updates:**
-- v1.4.0 – Git-Based Workflow (removed FEATURE_CHANGELOG, test-reports)
-- v1.3.0 – Production-Ready Guides (Error Tracking, Security, Performance)
-- v1.2.0 – Agent System Improvements (Interactive Questions, PM-Friendly Output)
-- v1.1.0 – Enhanced Documentation
-- v1.0.0 – Initial Release
-
----
-
-## License
-
-MIT License – feel free to use for your projects!
-
----
-
-**Built with AI Agent Team System + Claude Code** 🚀
-
-Ready to build production-ready apps? Start with the Requirements Engineer!
-
-```bash
-"Read .claude/agents/requirements-engineer.md and create a feature spec for [your idea]"
-```
+4. **Produktions‑Setup** (erste Deployment‑Runde)
+   - DevOps‑Agent‑Guides befolgen:
+     - Error Tracking (Sentry) – 5 Minuten
+     - Security Headers (`next.config.js`) – Copy‑Paste
+     - Performance‑Check (Lighthouse) – Chrome DevTools
