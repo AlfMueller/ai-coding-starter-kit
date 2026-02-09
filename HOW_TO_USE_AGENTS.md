@@ -107,7 +107,7 @@ in /features/PROJ-1-kanban-board.md.
 ```markdown
 Hey Claude, lies .claude/agents/devops.md und handle danach.
 
-Deploy das Projekt zu Vercel (Production).
+Deploy das Projekt auf dein PHP Hosting (Production).
 ```
 
 ---
@@ -265,7 +265,7 @@ Hey Claude, lies .claude/agents/backend-dev.md und handle danach.
 Lies /features/PROJ-1-user-authentication.md und baue die APIs.
 ```
 
-**Output:** Supabase Migrations, RLS Policies, API Routes
+**Output:** MariaDB SQL Migrations, Auth-Logik in PHP, API Routes
 
 ---
 
@@ -286,7 +286,7 @@ Teste PROJ-1 gegen Acceptance Criteria.
 ```
 Hey Claude, lies .claude/agents/devops.md und handle danach.
 
-Deploy zu Vercel.
+Deploy zu deinem PHP Hosting.
 ```
 
 **Output:** Production URL

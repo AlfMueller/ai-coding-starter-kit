@@ -21,12 +21,12 @@ Template ready - Start by defining your first feature!
 - **UI Library:** shadcn/ui (copy-paste components)
 
 ### Backend
-- **Database:** Supabase (PostgreSQL with Auth)
+- **Database:** MariaDB 10.3.32
 - **State Management:** React useState / Context API
 - **Data Fetching:** React Server Components / fetch
 
 ### Deployment
-- **Hosting:** Vercel (oder Netlify)
+- **Hosting:** PHP Hosting (Nginx/Apache + PHP-FPM)
 
 ---
 
@@ -67,10 +67,13 @@ Example roadmap structure:
 
 ## Environment Variables
 
-For projects using Supabase:
+For projects using PHP + MariaDB:
 ```bash
-NEXT_PUBLIC_SUPABASE_URL=your_supabase_url
-NEXT_PUBLIC_SUPABASE_ANON_KEY=your_anon_key
+DB_HOST=127.0.0.1
+DB_PORT=3306
+DB_NAME=your_database
+DB_USER=your_user
+DB_PASSWORD=your_password
 ```
 
 See `.env.local.example` for full list.
@@ -92,7 +95,7 @@ See `.env.local.example` for full list.
   - Responsive Design + Accessibility
 
 - **Backend Developer** (`.claude/agents/backend-dev.md`)
-  - Supabase Queries + Row Level Security Policies
+  - PHP APIs + SQL Queries (prepared statements)
   - API Routes + Server-Side Logic
 
 - **QA Engineer** (`.claude/agents/qa-engineer.md`)
@@ -100,7 +103,7 @@ See `.env.local.example` for full list.
   - Bugs dokumentieren + priorisieren
 
 - **DevOps** (`.claude/agents/devops.md`)
-  - Deployment zu Vercel
+  - Deployment zu PHP Hosting (Nginx/Apache)
   - Environment Variables verwalten
   - Production-Ready Essentials (Error Tracking, Security Headers, Performance)
 
@@ -144,7 +147,6 @@ ai-coding-starter-kit/
 │   ├── components/          ← React Components
 │   │   └── ui/              ← shadcn/ui components (add as needed)
 │   └── lib/                 ← Utility functions
-│       ├── supabase.ts      ← Supabase client (commented out by default)
 │       └── utils.ts         ← Helper functions
 ├── public/                  ← Static files
 ├── PROJECT_CONTEXT.md       ← This file - update as project grows
@@ -160,10 +162,10 @@ ai-coding-starter-kit/
    npm install
    ```
 
-2. **Setup Environment Variables (if using Supabase):**
+2. **Setup Environment Variables (if using PHP + MariaDB):**
    ```bash
    cp .env.local.example .env.local
-   # Add your Supabase credentials
+   # Add your DB credentials
    ```
 
 3. **Start development server:**

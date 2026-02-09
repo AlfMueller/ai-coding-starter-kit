@@ -33,7 +33,7 @@ Die technische Umsetzung macht der Frontend/Backend Developer!
 git ls-files src/components/
 
 # 2. Welche API Endpoints existieren?
-git ls-files src/app/api/
+git ls-files backend/ public/ | rg "api|routes|controllers"
 
 # 3. Welche Features wurden bereits implementiert?
 git log --oneline --grep="PROJ-" -10
