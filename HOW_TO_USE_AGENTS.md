@@ -70,23 +70,22 @@ designe die Tech-Infrastruktur (Database Schema, Components, APIs).
 **Claude wird:**
 1. ✅ Feature Spec lesen
 2. ✅ Fragen stellen (mit AskUserQuestion)
-3. ✅ Database Schema + Component Tree + API Endpoints designen
+3. ✅ Database Schema + API Endpoints designen
 4. ✅ Spec erweitern mit Tech-Design
 
 ---
 
-### Phase 3: Implementation
+### Phase 3: Implementation (Frontend/Backend)
 
 ```markdown
-# Frontend:
-Hey Claude, lies .claude/agents/frontend-dev.md und handle danach.
-
-Lies /features/PROJ-1-kanban-board.md und baue die UI Components.
-
-# Backend:
 Hey Claude, lies .claude/agents/backend-dev.md und handle danach.
 
 Lies /features/PROJ-1-kanban-board.md und baue die APIs + Database.
+
+# Optional UI/Views:
+Hey Claude, lies .claude/agents/frontend-dev.md und handle danach.
+
+Lies /features/PROJ-1-kanban-board.md und baue die UI-Views.
 ```
 
 ---
@@ -172,16 +171,14 @@ Phase 1: Lies .claude/agents/requirements-engineer.md → Erstelle Spec
 Phase 2: Lies .claude/agents/solution-architect.md → Designe Infrastruktur
 [Warte auf Output]
 
-Phase 3: Lies .claude/agents/frontend-dev.md → Baue UI
+Phase 3: Lies .claude/agents/backend-dev.md → Baue APIs
+[Optional] Lies .claude/agents/frontend-dev.md → Baue UI-Views
 [Warte auf Output]
 
-Phase 4: Lies .claude/agents/backend-dev.md → Baue APIs
+Phase 4: Lies .claude/agents/qa-engineer.md → Teste
 [Warte auf Output]
 
-Phase 5: Lies .claude/agents/qa-engineer.md → Teste
-[Warte auf Output]
-
-Phase 6: Lies .claude/agents/devops.md → Deploy
+Phase 5: Lies .claude/agents/devops.md → Deploy
 ```
 
 **Tipp:** Nutze `/clear` zwischen Phasen für bessere Performance!
@@ -204,7 +201,7 @@ Sie sind **nicht** im System registriert, aber genauso mächtig wenn du sie refe
 |-------|------|--------------|
 | **Requirements Engineer** | `.claude/agents/requirements-engineer.md` | Feature-Idee → Spec |
 | **Solution Architect** | `.claude/agents/solution-architect.md` | Spec → Tech-Design |
-| **Frontend Developer** | `.claude/agents/frontend-dev.md` | Design → UI Components |
+| **Frontend Developer** | `.claude/agents/frontend-dev.md` | Design → Views + UI |
 | **Backend Developer** | `.claude/agents/backend-dev.md` | Design → APIs + DB |
 | **QA Engineer** | `.claude/agents/qa-engineer.md` | Implementation → Testing |
 | **DevOps** | `.claude/agents/devops.md` | Tested → Production |
@@ -241,35 +238,28 @@ Hey Claude, lies .claude/agents/solution-architect.md und handle danach.
 Lies /features/PROJ-1-user-authentication.md und designe die Infrastruktur.
 ```
 
-**Output:** Database Schema + Component Tree + API Endpoints
+**Output:** Database Schema + API Endpoints
 
 ---
 
-### 3. Frontend (15 Min)
-
-```
-Hey Claude, lies .claude/agents/frontend-dev.md und handle danach.
-
-Lies /features/PROJ-1-user-authentication.md und baue die UI.
-```
-
-**Output:** Login Form, Signup Form, Password Reset Components
-
----
-
-### 4. Backend (15 Min)
+### 3. Frontend/Backend (15 Min)
 
 ```
 Hey Claude, lies .claude/agents/backend-dev.md und handle danach.
 
 Lies /features/PROJ-1-user-authentication.md und baue die APIs.
+
+# Optional UI/Views:
+Hey Claude, lies .claude/agents/frontend-dev.md und handle danach.
+
+Lies /features/PROJ-1-user-authentication.md und baue die UI-Views.
 ```
 
-**Output:** MariaDB SQL Migrations, Auth-Logik in PHP, API Routes
+**Output:** MariaDB SQL Migrations, Auth-Logik in PHP, API Routes (+ optional Views)
 
 ---
 
-### 5. Testing (10 Min)
+### 4. Testing (10 Min)
 
 ```
 Hey Claude, lies .claude/agents/qa-engineer.md und handle danach.
@@ -281,7 +271,7 @@ Teste PROJ-1 gegen Acceptance Criteria.
 
 ---
 
-### 6. Deployment (5 Min)
+### 5. Deployment (5 Min)
 
 ```
 Hey Claude, lies .claude/agents/devops.md und handle danach.
@@ -293,7 +283,7 @@ Deploy zu deinem PHP Hosting.
 
 ---
 
-**Gesamt:** ~55 Minuten für production-ready Feature 🚀
+**Gesamt:** ~45 Minuten für production-ready Feature 🚀
 
 ---
 

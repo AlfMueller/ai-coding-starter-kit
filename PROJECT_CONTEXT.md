@@ -1,32 +1,29 @@
-# AI Coding Starter Kit
+# AI Coding Starter Kit – PHP + MariaDB
 
-> A Next.js template with an AI-powered development workflow using 6 specialized agents
+> Reines PHP‑Template mit AI‑Agent‑Workflow (ohne Node.js).
 
 ## Vision
-Build web applications faster with AI agents handling Requirements, Architecture, Development, QA, and Deployment. Each agent has clear responsibilities and a human-in-the-loop workflow for quality control.
+Build web applications faster with AI agents handling Requirements, Architecture, Frontend + Backend Development, QA, and Deployment. Each agent has clear responsibilities and a human-in-the-loop workflow for quality control.
 
 ---
 
 ## Aktueller Status
-Template ready - Start by defining your first feature!
+Template ready – starte mit deinem ersten Feature!
 
 ---
 
 ## Tech Stack
 
-### Frontend
-- **Framework:** Next.js 16 (App Router)
-- **Sprache:** TypeScript
-- **Styling:** Tailwind CSS
-- **UI Library:** shadcn/ui (copy-paste components)
-
 ### Backend
+- **Sprache:** PHP 8.4
 - **Database:** MariaDB 10.3.32
-- **State Management:** React useState / Context API
-- **Data Fetching:** React Server Components / fetch
+- **API Style:** REST (klassisch), optional JSON‑Responses
 
 ### Deployment
-- **Hosting:** PHP Hosting (Nginx/Apache + PHP-FPM)
+- **Hosting:** PHP Hosting (Nginx/Apache + PHP‑FPM)
+
+### Optional
+- **Automationen:** n8n (Webhooks, Integrationen, Cron‑Workflows)
 
 ---
 
@@ -59,7 +56,7 @@ Example roadmap structure:
 1. **Requirements Engineer** erstellt Feature Spec → User reviewt
 2. **Solution Architect** designed Schema/Architecture → User approved
 3. **PROJECT_CONTEXT.md** Roadmap updaten (Status: 🔵 Planned → 🟢 In Development)
-4. **Frontend + Backend Devs** implementieren → User testet
+4. **Frontend/Backend Dev** implementiert Views/APIs + SQL → User testet
 5. **QA Engineer** führt Tests aus → Bugs werden gemeldet
 6. **DevOps** deployed → Status: ✅ Done
 
@@ -67,16 +64,20 @@ Example roadmap structure:
 
 ## Environment Variables
 
-For projects using PHP + MariaDB:
 ```bash
+APP_ENV=local
+APP_DEBUG=true
+
 DB_HOST=127.0.0.1
 DB_PORT=3306
 DB_NAME=your_database
 DB_USER=your_user
 DB_PASSWORD=your_password
-```
 
-See `.env.local.example` for full list.
+# Optional: n8n Webhooks
+# N8N_BASE_URL=https://your-n8n-instance.example.com
+# N8N_WEBHOOK_SECRET=change-me
+```
 
 ---
 
@@ -91,8 +92,8 @@ See `.env.local.example` for full list.
   - Tech-Entscheidungen treffen
 
 - **Frontend Developer** (`.claude/agents/frontend-dev.md`)
-  - UI Components bauen (React + Tailwind + shadcn/ui)
-  - Responsive Design + Accessibility
+  - PHP Views + HTML/CSS umsetzen (ohne Node.js)
+  - Responsives Layout + Accessibility
 
 - **Backend Developer** (`.claude/agents/backend-dev.md`)
   - PHP APIs + SQL Queries (prepared statements)
@@ -105,7 +106,7 @@ See `.env.local.example` for full list.
 - **DevOps** (`.claude/agents/devops.md`)
   - Deployment zu PHP Hosting (Nginx/Apache)
   - Environment Variables verwalten
-  - Production-Ready Essentials (Error Tracking, Security Headers, Performance)
+  - Production-Ready Essentials (Security, Performance)
 
 ---
 
@@ -116,21 +117,10 @@ This template includes production-readiness guides integrated into the agents:
 - **Error Tracking:** Sentry setup instructions (DevOps Agent)
 - **Security Headers:** XSS/Clickjacking protection (DevOps Agent)
 - **Performance:** Database indexing, query optimization (Backend Agent)
-- **Input Validation:** Zod schemas for API safety (Backend Agent)
-- **Caching:** Next.js caching strategies (Backend Agent)
+- **Input Validation:** Server-side validation best practices (Backend Agent)
+- **Caching:** OPcache/Redis examples (Backend Agent)
 
 All guides are practical and include code examples ready to copy-paste.
-
----
-
-## Design Decisions
-
-Document your architectural decisions here as your project evolves.
-
-**Template:**
-- **Why did we choose X over Y?**
-  → Reason 1
-  → Reason 2
 
 ---
 
@@ -140,62 +130,34 @@ Document your architectural decisions here as your project evolves.
 ai-coding-starter-kit/
 ├── .claude/
 │   └── agents/              ← 6 AI Agents (Requirements, Architect, Frontend, Backend, QA, DevOps)
-├── features/                ← Feature Specs (Requirements Engineer creates these)
-│   └── README.md            ← Documentation on how to write feature specs
-├── src/
-│   ├── app/                 ← Pages (Next.js App Router)
-│   ├── components/          ← React Components
-│   │   └── ui/              ← shadcn/ui components (add as needed)
-│   └── lib/                 ← Utility functions
-│       └── utils.ts         ← Helper functions
-├── public/                  ← Static files
-├── PROJECT_CONTEXT.md       ← This file - update as project grows
-└── package.json
+├── config/                  ← Config (DB)
+├── features/                ← Feature Specs
+├── migrations/              ← SQL migrations
+├── public/                  ← Public web root
+├── src/                     ← PHP classes
+├── bootstrap.php            ← Bootstrap
+├── PROJECT_CONTEXT.md       ← This file
+└── .env.example             ← Environment template
 ```
 
 ---
 
 ## Getting Started
 
-1. **Install dependencies:**
+1. **Environment Variables:**
    ```bash
-   npm install
-   ```
-
-2. **Setup Environment Variables (if using PHP + MariaDB):**
-   ```bash
-   cp .env.local.example .env.local
+   cp .env.example .env
    # Add your DB credentials
    ```
 
-3. **Start development server:**
+2. **Start development server:**
    ```bash
-   npm run dev
+   php -S localhost:8000 -t public
    ```
 
-4. **Start using the AI Agent workflow:**
+3. **Start using the AI Agent workflow:**
    - Tell Claude to read `.claude/agents/requirements-engineer.md` and define your first feature
-   - Follow the workflow: Requirements → Architecture → Development → QA → Deployment
-
----
-
-## Next Steps
-
-1. **Define your first feature idea**
-   - Think about what you want to build
-
-2. **Start with Requirements Engineer**
-   - Tell Claude: "Read .claude/agents/requirements-engineer.md and create a feature spec for [your idea]"
-   - The agent will ask clarifying questions and create a detailed spec
-
-3. **Follow the AI Agent workflow**
-   - Requirements → Architecture → Development → QA → Deployment
-   - Each agent knows when to hand off to the next agent
-
-4. **Track progress via Git**
-   - Feature specs in `/features/PROJ-X.md` show status (Planned → In Progress → Deployed)
-   - Git commits track all implementation details
-   - Use `git log --grep="PROJ-X"` to see feature history
+   - Follow the workflow: Requirements → Architecture → Backend → QA → Deployment
 
 ---
 

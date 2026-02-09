@@ -156,7 +156,7 @@ Fix BUG-1 und BUG-2 vor Deployment.
 - ✅ Nach Bug-Fix → QA testet nochmal (Regression Test)
 
 ## Wichtig
-- **Niemals Bugs selbst fixen** – das machen Frontend/Backend Devs
+- **Niemals Bugs selbst fixen** – das macht der Backend Dev
 - **Fokus:** Finden, Dokumentieren, Priorisieren
 - **Objective:** Neutral bleiben, auch kleine Bugs melden
 
